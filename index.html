@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Nathanaël NAGOU — Développeur web & UX, titulaire du BTS SIO SLAM." />
+  <title>Nathanaël NAGOU</title>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+ 
+  <!-- ═══════════════════════════════════════
+       NAV — barre supérieure éditoriale
+  ═══════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="header-brand" href="#hero" aria-label="Accueil Nathanaël NAGOU">
+        <span class="brand-first">Nathanaël</span>
+        <span class="brand-last">NAGOU</span>
+      </a>
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a href="#profil"     data-section="profil">Profil</a>
+        <a href="#stack"      data-section="stack">Stack</a>
+        <a href="#parcours"   data-section="parcours">Parcours</a>
+        <a href="#creations"  data-section="creations">Créations</a>
+        <a href="#cv"         data-section="cv">CV</a>
+        <a href="#contact"    data-section="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+ 
+ 
+  <!-- ═══════════════════════════════════════
+       HERO — split diagonal
+  ═══════════════════════════════════════ -->
+  <section id="hero" class="hero" aria-label="Présentation">
+ 
+    <div class="hero-left">
+      <p class="hero-tag" aria-label="Disponibilité">
+        <span class="hero-tag-dot" aria-hidden="true"></span>
+        <span>Septembre 2026</span>
+        <span class="tag-sep" aria-hidden="true">—</span>
+        <span>Recherche Alternance</span>
+      </p>
+      <h1 class="hero-heading">
+        <span class="h1-line h1-white">Futur Alternant</span>
+        <span class="h1-line h1-teal">Développeur Web</span>
+        <span class="h1-line h1-white">Front-End</span>
+      </h1>
+      <p class="hero-desc">
+        Titulaire du BTS SIO SLAM, je conçois des interfaces où la logique
+        technique rencontre la <strong>sensibilité UI/UX</strong> — du wireframe
+        au composant, du pixel au serveur.
+      </p>
+      <div class="hero-ctas">
+        <a class="cta-main cta-hire" href="#contact">
+          Recrutez-moi pour une alternance
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="cta-ghost" href="#creations">Découvrir mes projets</a>
+      </div>
+    </div>
+ 
+    <div class="hero-right" aria-hidden="true">
+      <div class="hero-deco-ring ring-1"></div>
+      <div class="hero-deco-ring ring-2"></div>
+      <div class="hero-deco-ring ring-3"></div>
+      <div class="hero-deco-cross cross-a"></div>
+      <div class="hero-deco-cross cross-b"></div>
+      <span class="hero-big-initial">N</span>
+    </div>
+ 
+    <a class="hero-down" href="#profil" aria-label="Défiler vers la section Profil">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+    </a>
+ 
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════
+       PROFIL — layout horizontal asymétrique
+  ═══════════════════════════════════════ -->
+  <section id="profil" class="section-profil" aria-labelledby="profil-title">
+ 
+    <div class="section-marker" aria-hidden="true">
+      <span class="marker-num">01</span>
+      <span class="marker-line"></span>
+    </div>
+ 
+    <div class="profil-layout">
+ 
+      <div class="profil-intro reveal">
+        <h2 class="section-heading" id="profil-title">Mon Profil</h2>
+        <p>
+          Originaire de <strong>Martinique</strong>, titulaire du
+          <strong>BTS SIO SLAM</strong>, j'ai construit mon parcours entre
+          les Antilles et la métropole — de l'IUT de Fontainebleau
+          aux stages en Martinique et à Malte.
+        </p>
+        <p>
+          Ce qui me motive : la frontière entre <strong>design UI/UX et code</strong>.
+          Concevoir une interface, c'est résoudre un problème — du wireframe
+          au pixel, chaque décision a un impact sur l'utilisateur.
+        </p>
+        <div class="profil-interests" role="list" aria-label="Centres d'intérêt">
+          <span role="listitem" class="interest-highlight">UI/UX Design</span>
+          <span role="listitem">Volley-Ball</span>
+          <span role="listitem">Randonnée</span>
+          <span role="listitem">Jeux vidéo</span>
+          <span role="listitem">Anglais B2</span>
+          <span role="listitem">Espagnol A1</span>
+        </div>
+      </div>
+ 
+      <div class="profil-numbers reveal">
+        <div class="kpi-card">
+          <strong class="kpi-val">2</strong>
+          <span class="kpi-label">Stages<br/>professionnels</span>
+        </div>
+        <div class="kpi-card">
+          <strong class="kpi-val">4</strong>
+          <span class="kpi-label">Projets<br/>réalisés</span>
+        </div>
+        <div class="kpi-card">
+          <strong class="kpi-val">9+</strong>
+          <span class="kpi-label">Technologies<br/>maîtrisées</span>
+        </div>
+        <div class="kpi-card kpi-accent">
+          <strong class="kpi-val">2</strong>
+          <span class="kpi-label">Pays<br/>d'expérience</span>
+        </div>
+      </div>
+ 
+    </div>
+ 
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════
+       STACK — défilement horizontal infini
+  ═══════════════════════════════════════ -->
+  <section id="stack" class="section-stack" aria-labelledby="stack-title">
+ 
+    <div class="stack-header">
+      <div class="section-marker" aria-hidden="true">
+        <span class="marker-num">02</span>
+        <span class="marker-line"></span>
+      </div>
+      <h2 class="section-heading reveal" id="stack-title">Stack Technique</h2>
+    </div>
+ 
+    <!--
+      Logos chargés depuis Devicon CDN (jsdelivr) — licence MIT
+      Base URL : https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{name}/{name}-original.svg
+    -->
+    <div class="marquee-wrapper" aria-label="Technologies maîtrisées" role="region">
+ 
+      <!-- Piste 1 : gauche -->
+      <div class="marquee-track" aria-hidden="true">
+        <ul class="marquee-list marquee-list--left">
+ 
+          <li class="logo-pill">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">HTML</span>
+          </li>
+ 
+          <li class="logo-pill">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">CSS</span>
+          </li>
+ 
+          <li class="logo-pill">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">JavaScript</span>
+          </li>
+ 
+          <li class="logo-pill">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">PHP</span>
+          </li>
+ 
+          <li class="logo-pill">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">SQL</span>
+          </li>
+ 
+          <li class="logo-pill">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">Java</span>
+          </li>
+ 
+          <!-- Duplication pour boucle infinie -->
+          <li class="logo-pill" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">HTML</span></li>
+          <li class="logo-pill" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">CSS</span></li>
+          <li class="logo-pill" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">JavaScript</span></li>
+          <li class="logo-pill" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">PHP</span></li>
+          <li class="logo-pill" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">SQL</span></li>
+          <li class="logo-pill" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">Java</span></li>
+ 
+        </ul>
+      </div>
+ 
+      <!-- Piste 2 : droite (direction inverse) -->
+      <div class="marquee-track" aria-hidden="true">
+        <ul class="marquee-list marquee-list--right">
+ 
+          <li class="logo-pill logo-pill--outline">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg" alt="Three.js" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">Three.js</span>
+          </li>
+ 
+          <li class="logo-pill logo-pill--outline">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">VS Code</span>
+          </li>
+ 
+          <li class="logo-pill logo-pill--outline">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" alt="Eclipse" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">Eclipse</span>
+          </li>
+ 
+          <li class="logo-pill logo-pill--outline">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">Postman</span>
+          </li>
+ 
+          <li class="logo-pill logo-pill--outline">
+            <span class="logo-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="logo-img" loading="lazy" />
+            </span>
+            <span class="logo-name">Git</span>
+          </li>
+ 
+          <li class="logo-pill logo-pill--outline">
+            <span class="logo-icon logo-emoji">📋</span>
+            <span class="logo-name">Suite Office</span>
+          </li>
+ 
+          <!-- Duplication pour boucle infinie -->
+          <li class="logo-pill logo-pill--outline" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">Three.js</span></li>
+          <li class="logo-pill logo-pill--outline" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">VS Code</span></li>
+          <li class="logo-pill logo-pill--outline" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">Eclipse</span></li>
+          <li class="logo-pill logo-pill--outline" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">Postman</span></li>
+          <li class="logo-pill logo-pill--outline" aria-hidden="true"><span class="logo-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" class="logo-img" loading="lazy" /></span><span class="logo-name">Git</span></li>
+          <li class="logo-pill logo-pill--outline" aria-hidden="true"><span class="logo-icon logo-emoji">📋</span><span class="logo-name">Suite Office</span></li>
+ 
+        </ul>
+      </div>
+ 
+    </div>
+ 
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════
+       PARCOURS — frise zigzag (image référence)
+  ═══════════════════════════════════════ -->
+  <section id="parcours" class="section-parcours" aria-labelledby="parcours-title">
+ 
+    <div class="section-marker" aria-hidden="true">
+      <span class="marker-num">03</span>
+      <span class="marker-line"></span>
+    </div>
+ 
+    <div class="parcours-header reveal">
+      <h2 class="section-heading" id="parcours-title">Mon Parcours</h2>
+      <p class="parcours-intro">
+        De la Martinique à Malte, chaque étape a forgé une vision
+        plurielle du développement.
+      </p>
+    </div>
+ 
+    <!-- FRISE ZIGZAG -->
+    <div class="phases-timeline" role="list" aria-label="Chronologie du parcours">
+ 
+      <!-- Ligne centrale -->
+      <div class="phases-spine" aria-hidden="true"></div>
+ 
+      <!-- ÉTAPE 1 — gauche -->
+      <div class="phase-row phase-left reveal" role="listitem">
+        <article class="phase-card card-formation">
+          <div class="card-inner">
+            <div class="card-top">
+              <h3 class="card-title">Baccalauréat STI2D SIN</h3>
+              <span class="card-badge badge-grey">Juil 2022</span>
+            </div>
+            <p class="card-place">Lycée Joseph Zobel · Rivière Salée, Martinique</p>
+            <ul class="card-items">
+              <li>Spécialité Système Informatique et Numérique</li>
+            </ul>
+          </div>
+        </article>
+        <div class="phase-node" aria-label="Étape 1">1</div>
+        <div class="phase-spacer"></div>
+      </div>
+ 
+      <!-- ÉTAPE 2 — droite -->
+      <div class="phase-row phase-right reveal" role="listitem">
+        <div class="phase-spacer"></div>
+        <div class="phase-node" aria-label="Étape 2">2</div>
+        <article class="phase-card card-formation">
+          <div class="card-inner">
+            <div class="card-top">
+              <h3 class="card-title">Bachelor Universitaire de Technologie</h3>
+              <span class="card-badge badge-teal">1 an</span>
+            </div>
+            <p class="card-place">IUT de Fontainebleau · Informatique</p>
+            <ul class="card-items">
+              <li>Algorithmique &amp; structures de données</li>
+              <li>Réseaux, bases de données, développement</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+ 
+      <!-- ÉTAPE 3 — gauche -->
+      <div class="phase-row phase-left reveal" role="listitem">
+        <article class="phase-card card-formation">
+          <div class="card-inner">
+            <div class="card-top">
+              <h3 class="card-title">BTS SIO SLAM</h3>
+              <span class="card-badge badge-teal">2 ans</span>
+            </div>
+            <p class="card-place">Lycée Joseph Gaillard · Fort-de-France</p>
+            <ul class="card-items">
+              <li>Solutions Logicielles et Applications Métiers</li>
+              <li>Développement web, BDD, cybersécurité</li>
+              <li>2 stages intégrés à la formation</li>
+            </ul>
+          </div>
+        </article>
+        <div class="phase-node" aria-label="Étape 3">3</div>
+        <div class="phase-spacer"></div>
+      </div>
+ 
+      <!-- ÉTAPE 4 — droite -->
+      <div class="phase-row phase-right reveal" role="listitem">
+        <div class="phase-spacer"></div>
+        <div class="phase-node" aria-label="Étape 4">4</div>
+        <article class="phase-card card-stage">
+          <div class="card-inner">
+            <div class="card-top">
+              <h3 class="card-title">Stage — Technicien Informatique</h3>
+              <span class="card-badge badge-amber">Mai → Juil 2024</span>
+            </div>
+            <div class="card-logo-wrap">
+              <img
+                src="https://raw.githubusercontent.com/Athna12/Portfolio/main/images/2024-11-Capture-decran-2024-11-29-073913.png"
+                alt="The Concept Stadium"
+                class="card-logo"
+                loading="lazy"
+              />
+            </div>
+            <p class="card-place">The Concept Stadium · Malte</p>
+            <ul class="card-items">
+              <li>Développement d'un système webhook PHP recevant des données JSON, stockant les IDs en base MySQL et appelant l'API Scoro après 15 minutes pour valider les tâches</li>
+              <li>Conception d'une mini-API REST (index.php) routant les entités task / project / user / user_group</li>
+              <li>UAT sur plusieurs sites WordPress — suivi de 4678 Ko de données dans Websites_UAT.xlsx</li>
+              <li>Maintenance et mises à jour des sites (Website_Updates.xlsx)</li>
+              <li>Étude de marché sur 6 systèmes d'email (Nylas, comparatif features / prix)</li>
+              <li>Gestion des contacts London Tech Week &amp; Dublin Tech Summit (Scoro CRM)</li>
+            </ul>
+            <div class="card-chips">
+              <span>PHP</span><span>JSON</span><span>MySQL</span><span>API REST</span><span>UAT</span><span>WordPress</span><span>CMS</span>
+            </div>
+          </div>
+        </article>
+      </div>
+ 
+      <!-- ÉTAPE 5 — gauche -->
+      <div class="phase-row phase-left reveal" role="listitem">
+        <article class="phase-card card-stage">
+          <div class="card-inner">
+            <div class="card-top">
+              <h3 class="card-title">Stage — Technicien Informatique</h3>
+              <span class="card-badge badge-teal">2 mois</span>
+            </div>
+            <div class="card-logo-wrap">
+              <img
+                src="https://raw.githubusercontent.com/Athna12/Portfolio/main/images/2025-03-xtralog_couleur.png"
+                alt="XTRALOG"
+                class="card-logo"
+                loading="lazy"
+              />
+            </div>
+            <p class="card-place">XTRALOG · Martinique</p>
+            <ul class="card-items">
+              <li>Conception Front-End : Moqups → WeWeb</li>
+              <li>Connexion utilisateur, liste d'objets, formulaire</li>
+              <li>Base de données PostgreSQL via Supabase</li>
+              <li>Tests API Postman · Validation accessibilité</li>
+            </ul>
+            <div class="card-chips">
+              <span>PostgreSQL</span><span>Supabase</span><span>WeWeb</span><span>Postman</span>
+            </div>
+          </div>
+        </article>
+        <div class="phase-node phase-node-last" aria-label="Étape 5">5</div>
+        <div class="phase-spacer"></div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════
+       CRÉATIONS — cards split + liste compacte
+  ═══════════════════════════════════════ -->
+  <section id="creations" class="section-creations" aria-labelledby="creations-title">
+ 
+    <div class="creations-header">
+      <div class="section-marker" aria-hidden="true">
+        <span class="marker-num">04</span>
+        <span class="marker-line"></span>
+      </div>
+      <div class="creations-title-row reveal">
+        <h2 class="section-heading" id="creations-title">
+          Mes <span class="creation-title-block">Créations</span>
+        </h2>
+        <p class="creations-sub">
+          Une sélection de réalisations techniques où l'architecture logicielle rencontre l'expérience utilisateur.
+        </p>
+      </div>
+    </div>
+ 
+    <!-- ── PROJETS GITHUB : layout split ── -->
+    <div class="creations-featured">
+ 
+      <!-- FREDI — screenshots réels gauche, texte droite -->
+      <article class="featured-card reveal" aria-label="Projet FREDI">
+        <div class="featured-visual featured-visual--fredi" aria-hidden="true">
+          <!--
+            NOTE : Uploader ces 2 fichiers dans Athna12/Portfolio/images/ sur GitHub
+            fredi-accueil.png
+            fredi-formulaire.png
+          -->
+          <div class="screenshot-stack">
+            <img
+              src="images/fredi-accueil.png"
+              alt="FREDI — page d'accueil"
+              class="screenshot-back"
+              loading="lazy"
+            />
+            <img
+              src="images/fredi-formulaire.png"
+              alt="FREDI — formulaire de note de frais"
+              class="screenshot-front"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="featured-info">
+          <span class="featured-category">Web Application</span>
+          <h3 class="featured-title">FREDI</h3>
+          <p class="featured-desc">
+            Application web de gestion de frais professionnels pour bénévoles.
+            Formulaire dynamique, calcul kilométrique automatique, validation par trésorier
+            et génération de documents CERFA.
+          </p>
+          <div class="featured-chips">
+            <span>PHP</span><span>HTML</span><span>CSS</span>
+            <span>JavaScript</span><span>SQL</span><span>PHPUnit</span>
+          </div>
+          <a
+            class="featured-cta"
+            href="https://github.com/Athna12/FREDI"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Voir FREDI sur GitHub"
+          >
+            Voir le projet
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+ 
+      <!-- POLYHEDRON UNIVERSE — texte gauche, screenshot réel droite -->
+      <article class="featured-card featured-card--reverse reveal" aria-label="Projet Polyhedron Universe">
+        <div class="featured-info">
+          <span class="featured-category">Interactive 3D</span>
+          <h3 class="featured-title">Polyhedron Universe</h3>
+          <p class="featured-desc">
+            Explorateur 3D interactif construit avec Three.js. Icosaèdre flat shading
+            + wireframe simultané, lumière orbitale animée et cycle chromatique fluide.
+          </p>
+          <div class="featured-chips">
+            <span>Three.js</span><span>JavaScript</span>
+            <span>HTML</span><span>OrbitControls</span>
+          </div>
+          <a
+            class="featured-cta"
+            href="https://github.com/Athna12/Test_THREE_JS"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Voir Polyhedron Universe sur GitHub"
+          >
+            Découvrir le projet
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+        <div class="featured-visual featured-visual--poly" aria-hidden="true">
+          <!--
+            NOTE : Uploader ce fichier dans Athna12/Portfolio/images/ sur GitHub
+            polyhedron-demo.mp4
+            (la vidéo Enregistrement_de_l_écran_2026-03-23_150626.mp4 renommée)
+          -->
+          <video
+            class="screenshot-fill"
+            src="images/polyhedron-demo.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="none"
+            aria-label="Démonstration de Polyhedron Universe — icosaèdre 3D animé"
+          >
+            <!-- Fallback si la vidéo ne charge pas -->
+            <img
+              src="https://raw.githubusercontent.com/Athna12/Portfolio/main/images/polyhedron-preview.png"
+              alt="Polyhedron Universe — icosaèdre 3D"
+              class="screenshot-fill"
+              loading="lazy"
+            />
+          </video>
+        </div>
+      </article>
+ 
+      <!-- PHP/JSON API WEBHOOK — texte gauche, visuel code droite -->
+      <article class="featured-card featured-card--reverse reveal" aria-label="Projet PHP JSON Webhook">
+        <div class="featured-info">
+          <span class="featured-category">API Back-End · Stage Malte</span>
+          <h3 class="featured-title">Webhook PHP &amp; API REST</h3>
+          <p class="featured-desc">
+            Système complet développé chez The Concept Stadium (Malte) : réception de données webhook JSON,
+            stockage en MySQL, appel différé de l'API Scoro à 15 minutes, validation métier
+            (statut, durée, date d'échéance) et journalisation des anomalies.
+          </p>
+          <div class="featured-chips">
+            <span>PHP</span><span>JSON</span><span>MySQL</span>
+            <span>API REST</span><span>Webhook</span><span>Scoro</span>
+          </div>
+          <!-- Code propriétaire du stage — pas de lien GitHub -->
+        </div>
+        <div class="featured-visual featured-visual--code" aria-hidden="true">
+          <div class="code-window">
+            <div class="code-titlebar">
+              <span class="code-dot code-dot--red"></span>
+              <span class="code-dot code-dot--yellow"></span>
+              <span class="code-dot code-dot--green"></span>
+              <span class="code-filename">JSON_Project.php</span>
+            </div>
+            <div class="code-body">
+              <div class="code-line"><span class="c-kw">$json</span> = <span class="c-fn">file_get_contents</span>(<span class="c-str">"api/task-data.json"</span>);</div>
+              <div class="code-line"><span class="c-kw">$entityId</span> = <span class="c-kw">$data</span>[<span class="c-str">'entityId'</span>];</div>
+              <div class="code-line code-line--blank"></div>
+              <div class="code-line"><span class="c-comment">// Boucle 15 minutes</span></div>
+              <div class="code-line"><span class="c-ctrl">while</span> (<span class="c-kw">$timeLeft</span> &gt; 0) {</div>
+              <div class="code-line code-indent"><span class="c-kw">$conn</span>-&gt;<span class="c-fn">query</span>(<span class="c-kw">$sql</span>);</div>
+              <div class="code-line code-indent"><span class="c-kw">$timeLeft</span> = <span class="c-fn">max</span>(0, 31 - <span class="c-kw">$i</span>);</div>
+              <div class="code-line">}</div>
+              <div class="code-line code-line--blank"></div>
+              <div class="code-line"><span class="c-comment">// Validation métier</span></div>
+              <div class="code-line"><span class="c-ctrl">if</span> (<span class="c-kw">$status</span> != <span class="c-str">'Studio'</span>) {</div>
+              <div class="code-line code-indent"><span class="c-fn">validate_task</span>(<span class="c-kw">$data</span>);</div>
+              <div class="code-line">}</div>
+            </div>
+          </div>
+        </div>
+      </article>
+ 
+    </div>
+ 
+      <!-- CREWAI + OLLAMA — terminal CSS animé gauche, texte droite -->
+      <article class="featured-card reveal" aria-label="Projet CrewAI + Ollama">
+        <div class="featured-visual featured-visual--ai" aria-hidden="true">
+          <div class="py-window">
+            <div class="py-titlebar">
+              <span class="code-dot code-dot--red"></span>
+              <span class="code-dot code-dot--yellow"></span>
+              <span class="code-dot code-dot--green"></span>
+              <span class="py-filename">hello_world.py</span>
+              <span class="py-lang">Python</span>
+            </div>
+            <div class="py-body">
+              <div class="py-line"><span class="py-comment"># Configuration LLM local</span></div>
+              <div class="py-line"><span class="py-kw">from</span> <span class="py-mod">crewai</span> <span class="py-kw">import</span> <span class="py-cls">Agent</span><span class="py-def">, </span><span class="py-cls">Crew</span><span class="py-def">, </span><span class="py-cls">Process</span><span class="py-def">, </span><span class="py-cls">LLM</span></div>
+              <div class="py-line py-blank"></div>
+              <div class="py-line"><span class="py-var">llm</span> <span class="py-def">= </span><span class="py-cls">LLM</span><span class="py-def">(</span></div>
+              <div class="py-line py-indent"><span class="py-param">model</span><span class="py-def">=</span><span class="py-str">"ollama/llama3.2:latest"</span><span class="py-def">,</span></div>
+              <div class="py-line py-indent"><span class="py-param">base_url</span><span class="py-def">=</span><span class="py-str">"http://localhost:11434"</span></div>
+              <div class="py-line"><span class="py-def">)</span></div>
+              <div class="py-line py-blank"></div>
+              <div class="py-line"><span class="py-comment"># Agent 1 — recherche</span></div>
+              <div class="py-line"><span class="py-var">chercheur</span> <span class="py-def">= </span><span class="py-cls">Agent</span><span class="py-def">(</span></div>
+              <div class="py-line py-indent"><span class="py-param">role</span><span class="py-def">=</span><span class="py-str">"Chercheur Expert"</span><span class="py-def">,</span></div>
+              <div class="py-line py-indent"><span class="py-param">goal</span><span class="py-def">=</span><span class="py-str">"Trouver des infos fascinantes"</span><span class="py-def">,</span></div>
+              <div class="py-line py-indent"><span class="py-param">llm</span><span class="py-def">=</span><span class="py-var">llm</span></div>
+              <div class="py-line"><span class="py-def">)</span></div>
+              <div class="py-line py-blank"></div>
+              <div class="py-line"><span class="py-comment"># Agent 2 — rédaction</span></div>
+              <div class="py-line"><span class="py-var">rédacteur</span> <span class="py-def">= </span><span class="py-cls">Agent</span><span class="py-def">(</span></div>
+              <div class="py-line py-indent"><span class="py-param">role</span><span class="py-def">=</span><span class="py-str">"Rédacteur Créatif"</span><span class="py-def">,</span></div>
+              <div class="py-line py-indent"><span class="py-param">llm</span><span class="py-def">=</span><span class="py-var">llm</span></div>
+              <div class="py-line"><span class="py-def">)</span></div>
+              <div class="py-line py-blank"></div>
+              <div class="py-line"><span class="py-comment"># Orchestration séquentielle</span></div>
+              <div class="py-line"><span class="py-var">crew</span> <span class="py-def">= </span><span class="py-cls">Crew</span><span class="py-def">(</span></div>
+              <div class="py-line py-indent"><span class="py-param">agents</span><span class="py-def">=[</span><span class="py-var">chercheur</span><span class="py-def">, </span><span class="py-var">rédacteur</span><span class="py-def">],</span></div>
+              <div class="py-line py-indent"><span class="py-param">process</span><span class="py-def">=</span><span class="py-cls">Process</span><span class="py-def">.</span><span class="py-fn">sequential</span></div>
+              <div class="py-line"><span class="py-def">)</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="featured-info">
+          <span class="featured-category">IA Locale · Expérimentation</span>
+          <h3 class="featured-title">CrewAI + Ollama</h3>
+          <p class="featured-desc">
+            Orchestration multi-agents en local : un <em>Chercheur Expert</em> et un <em>Rédacteur Créatif</em>
+            collaborent en séquence via CrewAI. Le tout propulsé par Llama 3.2, tournant
+            entièrement sur machine locale grâce à Ollama — aucun cloud, aucun token API.
+          </p>
+          <div class="featured-chips">
+            <span>Python</span><span>CrewAI</span><span>Ollama</span>
+            <span>Llama 3.2</span><span>LLM local</span>
+          </div>
+        </div>
+      </article>
+ 
+    </div>
+ 
+    <!-- ── AUTRES PROJETS : liste compacte ── -->
+    <div class="creations-others">
+      <p class="others-label" aria-hidden="true">Autres réalisations</p>
+ 
+      <article class="other-item reveal" aria-label="Projet Interface XTRALOG">
+        <div class="other-left">
+          <span class="other-num">04</span>
+          <div>
+            <h3 class="other-title">Interface XTRALOG</h3>
+            <p class="other-meta">Jan 2025 · Stage XTRALOG</p>
+          </div>
+        </div>
+        <p class="other-desc">
+          Front-End no-code : Moqups → WeWeb. Connexion utilisateur, liste d'objets, formulaire de saisie.
+        </p>
+        <div class="featured-chips">
+          <span>WeWeb</span><span>Moqups</span><span>Supabase</span>
+        </div>
+      </article>
+ 
+      <article class="other-item reveal" aria-label="Ce portfolio">
+        <div class="other-left">
+          <span class="other-num">05</span>
+          <div>
+            <h3 class="other-title">Portfolio Personnel</h3>
+            <p class="other-meta">2025 · Projet personnel</p>
+          </div>
+        </div>
+        <p class="other-desc">
+          Ce portfolio. Architecture 3 fichiers séparés, design system, frise zigzag animée.
+        </p>
+        <div class="featured-chips">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+      </article>
+    </div>
+ 
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════
+       CV — banderole horizontale
+  ═══════════════════════════════════════ -->
+  <section id="cv" class="section-cv" aria-labelledby="cv-title">
+ 
+    <div class="cv-banner">
+      <h2 class="cv-title" id="cv-title">Mon parcours détaillé</h2>
+      <a class="cv-download" href="#" download="CV_Nathanael_Nagou.pdf" aria-label="Télécharger le CV en PDF">
+        <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14,2 14,8 20,8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10,9 9,9 8,9"/>
+        </svg>
+        Télécharger mon CV (PDF)
+      </a>
+    </div>
+ 
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════
+       CONTACT — layout split
+  ═══════════════════════════════════════ -->
+  <section id="contact" class="section-contact" aria-labelledby="contact-title">
+ 
+    <div class="contact-left">
+      <div class="section-marker section-marker-light" aria-hidden="true">
+        <span class="marker-num">06</span>
+        <span class="marker-line"></span>
+      </div>
+      <h2 class="section-heading contact-heading" id="contact-title">
+        Discutons<span class="accent-dot">.</span>
+      </h2>
+      <p class="contact-baseline reveal">
+        Disponible pour des opportunités en développement web ou UX design.
+      </p>
+    </div>
+ 
+    <div class="contact-right reveal">
+      <a class="contact-row" href="mailto:nathanaelnagou@gmail.com" aria-label="Envoyer un email">
+        <span class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </span>
+        <span class="contact-value">nathanaelnagou@gmail.com</span>
+        <span class="contact-arrow" aria-hidden="true">→</span>
+      </a>
+ 
+      <a class="contact-row" href="tel:+3306400000" aria-label="Appeler">
+        <span class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <span class="contact-value">
+          <!-- NOTE : Compléter le numéro de téléphone complet -->
+          +33 06 40 ...
+        </span>
+        <span class="contact-arrow" aria-hidden="true">→</span>
+      </a>
+ 
+      <a
+        class="contact-row"
+        href="https://www.linkedin.com/in/nathanael-nagou-aaa605352/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Profil LinkedIn"
+      >
+        <span class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </span>
+        <span class="contact-value">LinkedIn</span>
+        <span class="contact-arrow" aria-hidden="true">→</span>
+      </a>
+ 
+      <a
+        class="contact-row"
+        href="https://github.com/Athna12"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Profil GitHub"
+      >
+        <span class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </span>
+        <span class="contact-value">GitHub — Athna12</span>
+        <span class="contact-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+ 
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <span class="footer-name">Nathanaël NAGOU · 2025</span>
+  </footer>
+ 
+  <script src="js/script.js"></script>
+</body>
+</html>
