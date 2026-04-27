@@ -1,11 +1,4 @@
-/* ============================================================
-   DESIGN SYSTEM — Nathanaël NAGOU Portfolio
-   Palette    : Blanc #FFFFFF · Teal #2ec4b6 · Navy #0f2340
-   Typographie: Syne (display) · DM Sans (body) · Space Mono (mono)
-   Architecture: 3 fichiers séparés (HTML / CSS / JS)
-   ============================================================ */
- 
-/* ── TOKENS ───────────────────────────────────────────────── */
+
 :root {
   /* Couleurs */
   --white:        #ffffff;
@@ -48,7 +41,7 @@
   --r-xl:  32px;
 }
  
-/* ── RESET ────────────────────────────────────────────────── */
+/* Réinitialisation des styles */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; font-size: 16px; }
 body  { background: var(--white); color: var(--text); font-family: var(--font-body); line-height: 1.7; overflow-x: hidden; }
@@ -60,7 +53,7 @@ ul    { list-style: none; }
 ::-webkit-scrollbar-track    { background: var(--off-white); }
 ::-webkit-scrollbar-thumb    { background: var(--teal); border-radius: 4px; }
  
-/* ── UTILITAIRES ──────────────────────────────────────────── */
+/* Utilitaires */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -78,7 +71,7 @@ ul    { list-style: none; }
   margin-bottom: 2.5rem;
 }
  
-/* Marqueur de section (01 / —) */
+/* Marqueur de section (numéro et ligne) */
 .section-marker {
   display: flex;
   align-items: center;
@@ -104,7 +97,7 @@ ul    { list-style: none; }
   background: var(--border-light);
 }
  
-/* ── HEADER / NAV ─────────────────────────────────────────── */
+/* En-tête et navigation */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -194,7 +187,7 @@ ul    { list-style: none; }
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
  
-/* ── HERO ─────────────────────────────────────────────────── */
+/* Section d'accueil */
 .hero {
   min-height: 100vh;
   display: grid;
@@ -303,7 +296,7 @@ ul    { list-style: none; }
   transform: translateY(-2px);
 }
  
-/* Déco droite du hero */
+/* Décorations à droite de la section d'accueil */
 .hero-right {
   position: relative;
   height: 500px;
@@ -352,7 +345,7 @@ ul    { list-style: none; }
 .cross-a { top: 22%; left: 18%; }
 .cross-b { bottom: 28%; right: 22%; }
  
-/* Flèche scroll */
+/* Flèche de défilement */
 .hero-down {
   position: absolute;
   bottom: 2.2rem;
@@ -374,7 +367,7 @@ ul    { list-style: none; }
   50%    { transform: translateX(-50%) translateY(5px); }
 }
  
-/* Point animé dans le hero-tag disponibilité */
+/* Point animé dans le tag de disponibilité */
 .hero-tag-dot {
   width: 7px; height: 7px;
   border-radius: 50%;
@@ -384,7 +377,7 @@ ul    { list-style: none; }
   animation: blink 2s ease-in-out infinite;
 }
  
-/* CTA "Recrutez-moi" — variante avec icône et effet navy au hover */
+/* Bouton d'appel à l'action "Recrutez-moi" avec icône et effet au survol */
 .cta-hire {
   display: inline-flex;
   align-items: center;
@@ -402,7 +395,7 @@ ul    { list-style: none; }
   transform: translateX(4px);
 }
  
-/* ── SECTION POURQUOI ME RECRUTER ─────────────────────────── */
+/* Section Pourquoi me recruter */
 .section-recruter {
   padding: var(--s-pad);
   background: var(--navy);

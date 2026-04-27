@@ -1,21 +1,12 @@
-/* ============================================================
-   script.js — Nathanaël NAGOU Portfolio
-   Modules :
-     1. initScrollReveal      — apparition des éléments au scroll
-     2. initMarqueePause      — pause du défilement au survol (accessibilité)
-     3. initStagger           — délais en cascade sur les cartes
-     4. initHeaderBehavior    — ombre + lien actif de la nav
-     5. initSmoothScroll      — défilement fluide avec offset header
-   ============================================================ */
 
 'use strict';
 
-/* ── CONSTANTES ───────────────────────────────────────────── */
+/* Constantes */
 
 /** Hauteur de la barre de navigation fixe en px */
 const HEADER_HEIGHT = 72;
 
-/* ── 1. SCROLL REVEAL ─────────────────────────────────────── */
+/* Fonctionnalité de révélation au défilement */
 
 /**
  * Rend visible un élément en ajoutant la classe CSS `.visible`.
@@ -45,17 +36,6 @@ function initScrollReveal() {
   });
 }
 
-/* ── 2. MARQUEE — ACCESSIBILITÉ ───────────────────────────── */
-
-/**
- * Respecte la préférence `prefers-reduced-motion` :
- * si l'utilisateur a activé "Réduire les animations" dans son OS,
- * les pistes du marquee sont mises en pause immédiatement.
- *
- * Le CSS gère déjà la pause au survol souris (.section-stack:hover).
- * Cette fonction couvre le cas des utilisateurs qui préfèrent
- * ne pas avoir d'animations en mouvement constant.
- */
 function initMarqueePause() {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -70,7 +50,7 @@ function initMarqueePause() {
   prefersReduced.addEventListener('change', applyMotionPreference);
 }
 
-/* ── 3. STAGGER ───────────────────────────────────────────── */
+/* Fonctionnalité de décalage des animations */
 
 /**
  * Ajoute un délai progressif sur les éléments enfants d'un conteneur
@@ -89,23 +69,23 @@ function applyStagger(parentSel, childSel, stepSec = 0.1) {
 }
 
 function initStagger() {
-  /* Étapes de la frise zigzag */
+  /* Étapes de la frise en zigzag */
   document.querySelectorAll('.phase-row').forEach((row, i) => {
     row.style.transitionDelay = (i * 0.1) + 's';
   });
 
-  /* Projets (liste éditoriale) */
+  /* Projets (liste) */
   document.querySelectorAll('.creation-item').forEach((item, i) => {
     item.style.transitionDelay = (i * 0.08) + 's';
   });
 
-  /* KPI cards du profil */
+  /* Cartes KPI du profil */
   document.querySelectorAll('.kpi-card').forEach((card, i) => {
     card.style.transitionDelay = (i * 0.07) + 's';
   });
 }
 
-/* ── 4. COMPORTEMENT DU HEADER ────────────────────────────── */
+/* Comportement de l'en-tête */
 
 /**
  * Ajoute `.scrolled` au header dès que la page défile
@@ -150,7 +130,7 @@ function initHeaderBehavior() {
   initActiveNavLink();
 }
 
-/* ── 5. SMOOTH SCROLL ─────────────────────────────────────── */
+/* Défilement fluide */
 
 /**
  * Intercepte les clics sur les ancres internes `href="#..."` et effectue
@@ -170,7 +150,7 @@ function initSmoothScroll() {
   });
 }
 
-/* ── INIT ─────────────────────────────────────────────────── */
+/* Initialisation */
 
 /**
  * Point d'entrée principal.
