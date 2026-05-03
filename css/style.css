@@ -8,40 +8,40 @@
   --muted:        #7a8fa6;
   --text:         #1e2d3d;
   --navy:         #0f2340;
- 
+
   --teal:         #2ec4b6;
   --teal-dark:    #1a9e92;
   --teal-xdark:   #0f7a70;
   --teal-soft:    #e2f7f5;
   --teal-mid:     rgba(46, 196, 182, 0.14);
- 
+
   --amber:        #f5a623;
   --amber-soft:   #fef4e3;
- 
+
   --grey-soft:    #f0f2f5;
   --grey-border:  #e2e8f0;
- 
+
   /* Ombres */
   --shadow-sm:    0 1px 6px rgba(15, 35, 64, 0.06);
   --shadow-md:    0 6px 24px rgba(15, 35, 64, 0.10);
   --shadow-lg:    0 16px 48px rgba(15, 35, 64, 0.13);
- 
+
   /* Typographies */
   --font-display: 'Syne', sans-serif;
   --font-body:    'DM Sans', sans-serif;
   --font-mono:    'Space Mono', monospace;
- 
+
   /* Espacements section */
   --s-pad: 6rem 6rem;
- 
+
   /* Arrondis */
   --r-sm:  6px;
   --r-md:  14px;
   --r-lg:  22px;
   --r-xl:  32px;
 }
- 
-/* Réinitialisation des styles */
+
+/* ── RESET ────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; font-size: 16px; }
 body  { background: var(--white); color: var(--text); font-family: var(--font-body); line-height: 1.7; overflow-x: hidden; }
@@ -52,8 +52,8 @@ ul    { list-style: none; }
 ::-webkit-scrollbar          { width: 4px; }
 ::-webkit-scrollbar-track    { background: var(--off-white); }
 ::-webkit-scrollbar-thumb    { background: var(--teal); border-radius: 4px; }
- 
-/* Utilitaires */
+
+/* ── UTILITAIRES ──────────────────────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -71,7 +71,7 @@ ul    { list-style: none; }
   margin-bottom: 2.5rem;
 }
  
-/* Marqueur de section (numéro et ligne) */
+/* Marqueur de section (01 / —) */
 .section-marker {
   display: flex;
   align-items: center;
@@ -96,8 +96,8 @@ ul    { list-style: none; }
   width: 48px;
   background: var(--border-light);
 }
- 
-/* En-tête et navigation */
+
+/* ── HEADER / NAV ─────────────────────────────────────────── */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -186,8 +186,8 @@ ul    { list-style: none; }
   animation: blink 2s ease-in-out infinite;
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
- 
-/* Section d'accueil */
+
+/* ── HERO ───────────────────────────────────────────────────── */
 .hero {
   min-height: 100vh;
   display: grid;
@@ -296,7 +296,7 @@ ul    { list-style: none; }
   transform: translateY(-2px);
 }
  
-/* Décorations à droite de la section d'accueil */
+/* Déco droite du hero */
 .hero-right {
   position: relative;
   height: 500px;
@@ -345,7 +345,7 @@ ul    { list-style: none; }
 .cross-a { top: 22%; left: 18%; }
 .cross-b { bottom: 28%; right: 22%; }
  
-/* Flèche de défilement */
+/* FLÈCHE SCROLL */
 .hero-down {
   position: absolute;
   bottom: 2.2rem;
@@ -367,7 +367,7 @@ ul    { list-style: none; }
   50%    { transform: translateX(-50%) translateY(5px); }
 }
  
-/* Point animé dans le tag de disponibilité */
+/* Point animé dans le hero-tag disponibilité */
 .hero-tag-dot {
   width: 7px; height: 7px;
   border-radius: 50%;
@@ -394,8 +394,8 @@ ul    { list-style: none; }
 .cta-hire:hover svg {
   transform: translateX(4px);
 }
- 
-/* Section Pourquoi me recruter */
+
+/* ── SECTION POURQUOI ME RECRUTER ───────────────────────── */
 .section-recruter {
   padding: var(--s-pad);
   background: var(--navy);
