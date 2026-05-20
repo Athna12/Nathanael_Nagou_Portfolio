@@ -41,7 +41,7 @@
   --r-xl:  32px;
 }
 
-/* ── RESET ────────────────────────────────────────────────── */
+/* RESET */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; font-size: 16px; }
 body  { background: var(--white); color: var(--text); font-family: var(--font-body); line-height: 1.7; overflow-x: hidden; }
@@ -53,7 +53,7 @@ ul    { list-style: none; }
 ::-webkit-scrollbar-track    { background: var(--off-white); }
 ::-webkit-scrollbar-thumb    { background: var(--teal); border-radius: 4px; }
 
-/* ── UTILITAIRES ──────────────────────────────────────────── */
+/* UTILITAIRES */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -97,7 +97,7 @@ ul    { list-style: none; }
   background: var(--border-light);
 }
 
-/* ── HEADER / NAV ─────────────────────────────────────────── */
+/* HEADER / NAV */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -187,7 +187,7 @@ ul    { list-style: none; }
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-/* ── HERO ───────────────────────────────────────────────────── */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: grid;
@@ -395,7 +395,7 @@ ul    { list-style: none; }
   transform: translateX(4px);
 }
 
-/* ── SECTION POURQUOI ME RECRUTER ───────────────────────── */
+/* SECTION POURQUOI ME RECRUTER */
 .section-recruter {
   padding: var(--s-pad);
   background: var(--navy);
@@ -641,7 +641,7 @@ ul    { list-style: none; }
   border-radius: 4px;
 }
  
-/* ── STACK — défilement horizontal infini ─────────────────── */
+/* STACK - défilement horizontal infini */
 .section-stack {
   padding: var(--s-pad);
   padding-bottom: 5rem;
@@ -702,7 +702,7 @@ ul    { list-style: none; }
 /* Pause au survol de la section entière */
 .section-stack:hover .marquee-list { animation-play-state: paused; }
  
-/* ── PILL (carte logo) ────────────────────────────────────── */
+/* PILL (carte logo) */
 .logo-pill {
   display: inline-flex;
   align-items: center;
@@ -773,7 +773,7 @@ ul    { list-style: none; }
   transition: color .22s;
 }
  
-/* ── KEYFRAMES du défilement ──────────────────────────────── */
+/* KEYFRAMES du défilement */
 @keyframes scrollLeft {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -784,7 +784,7 @@ ul    { list-style: none; }
   100% { transform: translateX(0); }
 }
  
-/* ── PARCOURS — FRISE ZIGZAG ──────────────────────────────── */
+/* PARCOURS - FRISE ZIGZAG */
 .section-parcours {
   padding: var(--s-pad);
   background: var(--off-white);
@@ -968,8 +968,7 @@ ul    { list-style: none; }
 .phase-right .phase-node   { grid-column: 2; }
 .phase-right .phase-card   { grid-column: 3; }
  
-/* ── CRÉATIONS ────────────────────────────────────────────── */
-/* ── CRÉATIONS ────────────────────────────────────────────── */
+/* CRÉATIONS */
 .section-creations {
   padding: var(--s-pad);
   background: var(--off-white);
@@ -1005,7 +1004,7 @@ ul    { list-style: none; }
   padding-top: .6rem;
 }
  
-/* ── CARDS FEATURED (split layout) ───────────────────────── */
+/* CARDS FEATURED (split layout) */
 .creations-featured {
   display: flex;
   flex-direction: column;
@@ -1217,7 +1216,7 @@ ul    { list-style: none; }
 }
 .featured-cta:hover svg { transform: translateX(3px) translateY(-3px); }
  
-/* ── AUTRES PROJETS (liste compacte) ─────────────────────── */
+/* AUTRES PROJETS (liste compacte) */
 .creations-others {
   border-top: 1.5px solid var(--grey-border);
   padding-top: 2rem;
@@ -1380,7 +1379,7 @@ ul    { list-style: none; }
   .featured-visual { min-height: 220px; }
 }
  
-/* ── CONTACT ──────────────────────────────────────────────── */
+/* CONTACT */
 .section-contact {
   padding: var(--s-pad);
   background: var(--navy);
@@ -1465,7 +1464,7 @@ ul    { list-style: none; }
 }
 .contact-row:hover .contact-arrow { color: var(--teal); transform: translateX(3px); }
  
-/* ── FOOTER ───────────────────────────────────────────────── */
+/* FOOTER */
 .site-footer {
   background: var(--navy);
   border-top: 1px solid rgba(255,255,255,.06);
@@ -1489,7 +1488,7 @@ ul    { list-style: none; }
 }
 .footer-pix span { color: var(--teal); opacity: .7; }
  
-/* ── CODE PYTHON — CrewAI / IA Locale ────────────────────── */
+/* CODE PYTHON - CrewAI / IA Locale */
 .featured-visual--ai {
   background: linear-gradient(150deg, #0d1117 0%, #161b22 60%, #0d1117 100%);
   position: relative;
@@ -1600,7 +1599,7 @@ ul    { list-style: none; }
 .py-def     { color: rgba(255,255,255,.55); }
 .py-comment { color: rgba(255,255,255,.28); font-style: italic; }
  
-/* ── CV — banderole téléchargement ───────────────────────── */
+/* CV - banderole téléchargement */
 .section-cv {
   padding: 3rem 6rem;
   background: var(--white);
@@ -1696,13 +1695,13 @@ ul    { list-style: none; }
   .cv-download { width: 100%; justify-content: center; }
 }
  
-/* ── KEYFRAMES ────────────────────────────────────────────── */
+/* KEYFRAMES */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
  
-/* ── RESPONSIVE ───────────────────────────────────────────── */
+/* RESPONSIVE */
 @media (max-width: 1100px) {
   :root { --s-pad: 5rem 4rem; }
   .header-inner { padding: .9rem 4rem; }
