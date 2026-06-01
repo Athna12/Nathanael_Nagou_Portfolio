@@ -83,20 +83,31 @@ function initActiveNavLink() {
   const navLinks  = document.querySelectorAll('.header-nav a[data-section]');
   if (!sections.length || !navLinks.length) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.id;
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.dataset.section === id);
-        });
-      });
-    },
-    { threshold: 0.4 }
-  );
+  const updateActiveLink = () => {
+    let closestSection = null;
+    let closestDistance = Infinity;
+    const viewportCenter = window.innerHeight / 2;
 
-  sections.forEach(s => observer.observe(s));
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const sectionCenter = (rect.top + rect.bottom) / 2;
+      const distance = Math.abs(sectionCenter - viewportCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestSection = section.id;
+      }
+    });
+
+    if (closestSection) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.section === closestSection);
+      });
+    }
+  };
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
 }
 
 function initHeaderBehavior() {
