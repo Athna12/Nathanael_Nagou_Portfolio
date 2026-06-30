@@ -14,8 +14,20 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a class="header-brand" href="#hero" aria-label="Accueil Nathanaël NAGOU">
-        <span class="brand-first">Nathanaël</span>
-        <span class="brand-last">NAGOU</span>
+        <span class="brand-ball" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M11.1 7.1a16.55 16.55 0 0 1 10.9 4"/>
+            <path d="M12 12a12.6 12.6 0 0 1-8.7 5"/>
+            <path d="M16.8 13.6a16.55 16.55 0 0 1-9 7.5"/>
+            <path d="M20.7 17a12.8 12.8 0 0 0-8.7-5 13.3 13.3 0 0 1 0-10"/>
+            <path d="M6.3 3.8a16.55 16.55 0 0 0 1.9 11.5"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-first">Nathanaël</span>
+          <span class="brand-last">NAGOU</span>
+        </span>
       </a>
       <nav class="header-nav" aria-label="Navigation principale">
         <a href="#profil"     data-section="profil">Profil</a>
@@ -51,14 +63,92 @@
       </div>
     </div>
  
-    <div class="hero-right" aria-hidden="true">
-      <div class="hero-deco-ring ring-1"></div>
-      <div class="hero-deco-ring ring-2"></div>
-      <div class="hero-deco-ring ring-3"></div>
-      <div class="hero-deco-cross cross-a"></div>
-      <div class="hero-deco-cross cross-b"></div>
-      <span class="hero-big-initial">N</span>
-    </div>
+    <nav class="volley-nav" aria-label="Navigation volley-ball">
+      <svg class="volley-svg" viewBox="0 0 400 400" role="group">
+        <defs>
+          <radialGradient id="vpSheen" cx="36%" cy="30%" r="72%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+            <stop offset="42%" stop-color="#ffffff" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#0f2340" stop-opacity="0.06"/>
+          </radialGradient>
+        </defs>
+
+        <a class="vp" href="#profil" data-section="profil" aria-label="Profil">
+          <path class="vp-face" d="M200 200 Q178.8 100.5 107.5 39.8 A185 185 0 0 1 292.5 39.8 Q275.6 131.9 200 200 Z"/>
+          <g class="vp-mark" transform="translate(200,80)">
+            <g class="vp-rot">
+              <g class="vp-pop">
+              <g class="vp-ic" transform="translate(-11,-30) scale(0.92)"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></g>
+              <text class="vp-tx" x="0" y="10" text-anchor="middle">Profil</text>
+              </g>
+            </g>
+          </g>
+        </a>
+
+        <a class="vp" href="#parcours" data-section="parcours" aria-label="Parcours">
+          <path class="vp-face" d="M200 200 Q275.6 131.9 292.5 39.8 A185 185 0 0 1 385 200 Q296.8 231.4 200 200 Z"/>
+          <g class="vp-mark" transform="translate(300,141)">
+            <g class="vp-rot">
+              <g class="vp-pop">
+              <g class="vp-ic" transform="translate(-11,-30) scale(0.92)"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></g>
+              <text class="vp-tx" x="0" y="10" text-anchor="middle">Parcours</text>
+              </g>
+            </g>
+          </g>
+        </a>
+
+        <a class="vp" href="#contact" data-section="contact" aria-label="Contact">
+          <path class="vp-face" d="M200 200 Q296.8 231.4 385 200 A185 185 0 0 1 292.5 360.2 Q221.2 299.5 200 200 Z"/>
+          <g class="vp-mark" transform="translate(300,259)">
+            <g class="vp-rot">
+              <g class="vp-pop">
+              <g class="vp-ic" transform="translate(-11,-30) scale(0.92)"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></g>
+              <text class="vp-tx" x="0" y="10" text-anchor="middle">Contact</text>
+              </g>
+            </g>
+          </g>
+        </a>
+
+        <a class="vp" href="#cv" data-section="cv" aria-label="CV">
+          <path class="vp-face" d="M200 200 Q221.2 299.5 292.5 360.2 A185 185 0 0 1 107.5 360.2 Q124.4 268.1 200 200 Z"/>
+          <g class="vp-mark" transform="translate(200,316)">
+            <g class="vp-rot">
+              <g class="vp-pop">
+              <g class="vp-ic" transform="translate(-11,-30) scale(0.92)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></g>
+              <text class="vp-tx" x="0" y="10" text-anchor="middle">CV</text>
+              </g>
+            </g>
+          </g>
+        </a>
+
+        <a class="vp" href="#creations" data-section="creations" aria-label="Créations">
+          <path class="vp-face" d="M200 200 Q124.4 268.1 107.5 360.2 A185 185 0 0 1 15 200 Q103.2 168.6 200 200 Z"/>
+          <g class="vp-mark" transform="translate(100,259)">
+            <g class="vp-rot">
+              <g class="vp-pop">
+              <g class="vp-ic" transform="translate(-11,-30) scale(0.92)"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></g>
+              <text class="vp-tx" x="0" y="10" text-anchor="middle">Créations</text>
+              </g>
+            </g>
+          </g>
+        </a>
+
+        <a class="vp" href="#stack" data-section="stack" aria-label="Stack">
+          <path class="vp-face" d="M200 200 Q103.2 168.6 15 200 A185 185 0 0 1 107.5 39.8 Q178.8 100.5 200 200 Z"/>
+          <g class="vp-mark" transform="translate(100,141)">
+            <g class="vp-rot">
+              <g class="vp-pop">
+              <g class="vp-ic" transform="translate(-11,-30) scale(0.92)"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></g>
+              <text class="vp-tx" x="0" y="10" text-anchor="middle">Stack</text>
+              </g>
+            </g>
+          </g>
+        </a>
+
+        <circle class="vp-ring" cx="200" cy="200" r="185"/>
+        <circle class="vp-sheen" cx="200" cy="200" r="185"/>
+      </svg>
+    </nav>
  
     <a class="hero-down" href="#profil" aria-label="Défiler vers la section Profil">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
@@ -340,7 +430,7 @@
       <div class="phase-row phase-right reveal" role="listitem">
         <div class="phase-spacer"></div>
         <div class="phase-node" aria-label="Étape 4">4</div>
-        <article class="phase-card card-stage">
+        <article class="phase-card card-stage card-dense">
           <div class="card-inner">
             <div class="card-top">
               <h3 class="card-title">Stage Technicien Informatique</h3>

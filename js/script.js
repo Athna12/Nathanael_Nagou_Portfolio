@@ -80,7 +80,7 @@ function initHeaderShadow() {
 // Met à jour le lien nav actif
 function initActiveNavLink() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks  = document.querySelectorAll('.header-nav a[data-section]');
+  const navLinks  = document.querySelectorAll('a[data-section]');
   if (!sections.length || !navLinks.length) return;
 
   const updateActiveLink = () => {
