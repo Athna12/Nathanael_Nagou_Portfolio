@@ -3,8 +3,11 @@
 
 'use strict';
 
-// Constantes
-const HEADER_HEIGHT = 72; // Hauteur du header fixe
+// Mesure dynamique de la hauteur du header
+function getHeaderHeight() {
+  const header = document.querySelector('.site-header');
+  return header ? header.offsetHeight : 72;
+}
 
 // Rend visible un élément
 function makeVisible(el) {
@@ -24,7 +27,7 @@ function initScrollReveal() {
     { threshold: 0.1 }
   );
 
-  document.querySelectorAll('.reveal, .phase-row, .creation-item').forEach(el => {
+  document.querySelectorAll('.reveal, .phase-row').forEach(el => {
     observer.observe(el);
   });
 }
@@ -56,10 +59,6 @@ function applyStagger(parentSel, childSel, stepSec = 0.1) {
 function initStagger() {
   document.querySelectorAll('.phase-row').forEach((row, i) => {
     row.style.transitionDelay = (i * 0.1) + 's';
-  });
-
-  document.querySelectorAll('.creation-item').forEach((item, i) => {
-    item.style.transitionDelay = (i * 0.08) + 's';
   });
 
   document.querySelectorAll('.kpi-card').forEach((card, i) => {
@@ -124,9 +123,79 @@ function initSmoothScroll() {
       const target = document.getElementById(id);
       if (!target) return;
       e.preventDefault();
-      const y = target.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT;
+      const y = target.getBoundingClientRect().top + window.scrollY - getHeaderHeight();
       window.scrollTo({ top: y, behavior: 'smooth' });
     });
+  });
+}
+
+// Lecture des vidéos de démo
+// L'attribut `autoplay` est refusé en silence par certains navigateurs
+// (économiseur d'énergie, onglet ouvert en arrière-plan, iOS bas niveau de batterie).
+// On relance donc la lecture à l'entrée dans le viewport, puis au premier geste
+// de l'utilisateur si le navigateur a rejeté la promesse de play().
+function initDemoVideos() {
+  const videos = document.querySelectorAll('video[autoplay]');
+  if (!videos.length) return;
+
+  const tryPlay = (video) => {
+    const attempt = video.play();
+    if (attempt && typeof attempt.catch === 'function') {
+      attempt.catch(() => {
+        // Rejet probable de l'autoplay : on retente au premier geste.
+        const retry = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('pointerdown', retry);
+          document.removeEventListener('keydown', retry);
+        };
+        document.addEventListener('pointerdown', retry, { once: true });
+        document.addEventListener('keydown', retry, { once: true });
+      });
+    }
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) tryPlay(entry.target);
+        else entry.target.pause();
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  videos.forEach(video => {
+    // `muted` doit être posé en JS aussi : l'attribut seul ne suffit pas
+    // toujours à débloquer l'autoplay sur WebKit.
+    video.muted = true;
+    observer.observe(video);
+  });
+}
+
+// Menu burger mobile
+function initMobileNav() {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav    = document.querySelector('.header-nav');
+  if (!toggle || !nav) return;
+
+  const setOpen = (open) => {
+    nav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  };
+
+  toggle.addEventListener('click', () => {
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  // Fermer après un clic sur un lien
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+
+  // Fermer avec Échap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
   });
 }
 
@@ -137,6 +206,8 @@ function init() {
   initMarqueePause();
   initHeaderBehavior();
   initSmoothScroll();
+  initMobileNav();
+  initDemoVideos();
 }
 
 document.addEventListener('DOMContentLoaded', init);

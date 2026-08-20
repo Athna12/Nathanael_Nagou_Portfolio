@@ -3,8 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio de Nathanaël NAGOU, Futur Alternant Développeur Web, titulaire du BTS SIO SLAM. Disponible septembre 2026." />
-  <title>Nathanaël NAGOU</title>
+
+  <title>Nathanaël NAGOU — Développeur web full stack | Alternance septembre 2026</title>
+  <meta name="description" content="Développeur web full stack titulaire du BTS SIO SLAM, admis en Bachelor Développement Informatique chez Sup de Vinci. Recherche une alternance à partir de septembre 2026 en Île-de-France, rythme 2 semaines entreprise / 2 semaines école." />
+
+  <!-- Open Graph : aperçu LinkedIn, Slack, WhatsApp -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Nathanaël NAGOU — Développeur web full stack" />
+  <meta property="og:description" content="BTS SIO SLAM · Deux stages dont un international en anglais · Alternance septembre 2026, Île-de-France." />
+  <meta property="og:url"         content="https://athna12.github.io/Nathanael_Nagou_Portfolio/" />
+  <meta property="og:image"       content="https://athna12.github.io/Nathanael_Nagou_Portfolio/images/og-preview.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"   content="Nathanaël NAGOU, développeur web full stack, alternance septembre 2026" />
+  <meta property="og:locale"      content="fr_FR" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://athna12.github.io/Nathanael_Nagou_Portfolio/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300..900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -29,7 +49,7 @@
           <span class="brand-last">NAGOU</span>
         </span>
       </a>
-      <nav class="header-nav" aria-label="Navigation principale">
+      <nav class="header-nav" id="main-nav" aria-label="Navigation principale">
         <a href="#profil"     data-section="profil">Profil</a>
         <a href="#stack"      data-section="stack">Stack</a>
         <a href="#parcours"   data-section="parcours">Parcours</a>
@@ -37,6 +57,12 @@
         <a href="#cv"         data-section="cv">CV</a>
         <a href="#contact"    data-section="contact">Contact</a>
       </nav>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
 
@@ -46,23 +72,32 @@
  
     <div class="hero-left">
       <h1 class="hero-heading">
-        <span class="h1-line h1-white">Futur Alternant</span>
+        <span class="h1-line h1-navy">Futur Alternant</span>
         <span class="h1-line h1-teal">Développeur Web</span>
       </h1>
+
       <p class="hero-desc">
-        Titulaire du BTS SIO SLAM, admissible en
-        <strong>Bachelor Développement Informatique chez Sup de Vinci</strong>
-        pour la rentrée 2026. Basé en <strong>Île-de-France</strong>.
+        Titulaire du <strong>BTS SIO SLAM</strong>, admis en Bachelor Développement
+        Informatique chez Sup de Vinci. Deux stages en entreprise, dont un
+        <strong>mené entièrement en anglais à Malte</strong>.
       </p>
+
+      <p class="hero-meta">
+        Rythme 2 semaines entreprise / 2 semaines école
+        <span class="meta-sep" aria-hidden="true">·</span>
+        Île-de-France
+      </p>
+
       <div class="hero-ctas">
         <a class="cta-main cta-hire" href="#contact">
-          Recrutez-moi pour une alternance
+          Me recruter en alternance
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a class="cta-ghost" href="#creations">Découvrir mes projets</a>
+        <a class="cta-ghost" href="#creations">Voir mes projets</a>
       </div>
-    </div>
- 
+
+    </div><!-- /.hero-left -->
+
     <nav class="volley-nav" aria-label="Navigation volley-ball">
       <svg class="volley-svg" viewBox="0 0 400 400" role="group">
         <defs>
@@ -149,13 +184,12 @@
         <circle class="vp-sheen" cx="200" cy="200" r="185"/>
       </svg>
     </nav>
- 
+
     <a class="hero-down" href="#profil" aria-label="Défiler vers la section Profil">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
     </a>
  
   </section>
-
 
   <!-- PROFIL -->
   <section id="profil" class="section-profil" aria-labelledby="profil-title">
@@ -195,11 +229,11 @@
           <span class="kpi-label">Stages<br/>professionnels</span>
         </div>
         <div class="kpi-card">
-          <strong class="kpi-val">4</strong>
+          <strong class="kpi-val">6</strong>
           <span class="kpi-label">Projets<br/>réalisés</span>
         </div>
         <div class="kpi-card">
-          <strong class="kpi-val">9+</strong>
+          <strong class="kpi-val">13</strong>
           <span class="kpi-label">Technologies<br/>maîtrisées</span>
         </div>
         <div class="kpi-card kpi-accent">
@@ -362,6 +396,7 @@
  
     <div class="parcours-header reveal">
       <h2 class="section-heading" id="parcours-title">Mon Parcours</h2>
+    </div>
 
     <!-- FRISE ZIGZAG -->
     <div class="phases-timeline" role="list" aria-label="Chronologie du parcours">
@@ -375,7 +410,7 @@
           <div class="card-inner">
             <div class="card-top">
               <h3 class="card-title">Baccalauréat STI2D SIN</h3>
-              <span class="card-badge badge-grey">Juil 2022</span>
+              <span class="card-badge badge-amber">2022</span>
             </div>
             <p class="card-place">Lycée Joseph Zobel · Rivière Salée, Martinique</p>
             <ul class="card-items">
@@ -395,7 +430,7 @@
           <div class="card-inner">
             <div class="card-top">
               <h3 class="card-title">Bachelor Universitaire de Technologie</h3>
-              <span class="card-badge badge-teal">1 an</span>
+              <span class="card-badge badge-amber">2022 – 2023</span>
             </div>
             <p class="card-place">IUT de Fontainebleau · Informatique</p>
             <ul class="card-items">
@@ -412,7 +447,7 @@
           <div class="card-inner">
             <div class="card-top">
               <h3 class="card-title">BTS SIO SLAM</h3>
-              <span class="card-badge badge-teal">2 ans</span>
+              <span class="card-badge badge-amber">2023 – 2025</span>
             </div>
             <p class="card-place">Lycée Joseph Gaillard · Fort-de-France</p>
             <ul class="card-items">
@@ -434,11 +469,11 @@
           <div class="card-inner">
             <div class="card-top">
               <h3 class="card-title">Stage Technicien Informatique</h3>
-              <span class="card-badge badge-amber">Mai → Juil 2024</span>
+              <span class="card-badge badge-teal">Mai – Juil 2024</span>
             </div>
             <div class="card-logo-wrap">
               <img
-                src="https://raw.githubusercontent.com/Athna12/Portfolio/main/images/2024-11-Capture-decran-2024-11-29-073913.png"
+                src="images/logo-concept-stadium.png"
                 alt="The Concept Stadium"
                 class="card-logo"
                 loading="lazy"
@@ -466,11 +501,11 @@
           <div class="card-inner">
             <div class="card-top">
               <h3 class="card-title">Stage Technicien Informatique</h3>
-              <span class="card-badge badge-teal">2 mois</span>
+              <span class="card-badge badge-teal">Jan – Fév 2025</span>
             </div>
             <div class="card-logo-wrap">
               <img
-                src="https://raw.githubusercontent.com/Athna12/Portfolio/main/images/2025-03-xtralog_couleur.png"
+                src="images/logo-xtralog.png"
                 alt="XTRALOG"
                 class="card-logo"
                 loading="lazy"
@@ -586,21 +621,15 @@
           <video
             class="screenshot-fill"
             src="images/polyhedron-demo.mp4"
+            poster="images/polyhedron-preview.png"
             autoplay
             loop
             muted
             playsinline
-            preload="none"
-            aria-label="Démonstration de Polyhedron Universe icosaèdre 3D animé"
-          >
-            <!-- Fallback si la vidéo ne charge pas -->
-            <img
-              src="https://raw.githubusercontent.com/Athna12/Portfolio/main/images/polyhedron-preview.png"
-              alt="Polyhedron Universe icosaèdre 3D"
-              class="screenshot-fill"
-              loading="lazy"
-            />
-          </video>
+            preload="auto"
+            disablepictureinpicture
+            aria-label="Démonstration de Polyhedron Universe : icosaèdre 3D animé"
+          ></video>
         </div>
       </article>
  
@@ -646,8 +675,6 @@
 
         </div>
       </article>
- 
-    </div>
 
       <!-- CREWAI + OLLAMA — terminal CSS animé gauche, texte droite -->
       <article class="featured-card featured-card--reverse reveal" aria-label="Projet CrewAI + Ollama">
@@ -704,8 +731,8 @@
           </div>
         </div>
       </article>
- 
-    </div>
+
+    </div><!-- /.creations-featured -->
 
     <!-- AUTRES PROJETS -->
     <div class="creations-others">
@@ -750,17 +777,39 @@
   <!-- CV -->
   <section id="cv" class="section-cv" aria-labelledby="cv-title">
 
-    <div class="cv-banner">
-      <h2 class="cv-title" id="cv-title">Mon parcours détaillé</h2>
-      <a class="cv-download" href="CV\CV-Sup-de-Vinci--Nathanael-NAGOU- (1).pdf" download="CV_Nathanael_Nagou.pdf" aria-label="Télécharger le CV en PDF">
-        <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <div class="section-marker" aria-hidden="true">
+      <span class="marker-num">05</span>
+      <span class="marker-line"></span>
+    </div>
+
+    <div class="cv-inner reveal">
+      <div class="cv-icon-wrap" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14,2 14,8 20,8"/>
+          <polyline points="14 2 14 8 20 8"/>
           <line x1="16" y1="13" x2="8" y2="13"/>
           <line x1="16" y1="17" x2="8" y2="17"/>
-          <polyline points="10,9 9,9 8,9"/>
         </svg>
-        Télécharger mon CV (PDF)
+      </div>
+
+      <div class="cv-text">
+        <p class="cv-eyebrow">Curriculum vitæ</p>
+        <h2 class="cv-title" id="cv-title">Mon parcours détaillé</h2>
+        <p class="cv-desc">
+          Expériences, compétences et formations — PDF, ~210 ko.
+        </p>
+      </div>
+
+      <a class="cv-download"
+         href="CV/cv-nathanael-nagou.pdf"
+         download="CV_NATHANAEL_NAGOU.pdf"
+         aria-label="Télécharger le CV de Nathanaël NAGOU au format PDF">
+        <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Télécharger le CV
       </a>
     </div>
 
