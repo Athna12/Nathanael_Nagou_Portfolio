@@ -13,27 +13,18 @@
   /* ── Couleurs : fonds ── */
   --white:        #ffffff;
   --off-white:    #f6f8fa;
-  --light:        #edf2f7;
   --border-light: #dde5ed;
   --navy:         #0f2340;
 
   /* ── Couleurs : texte ── */
   --text:         #1e2d3d;   /* 13,1:1 — corps principal */
   --muted:        #4a5f75;   /*  6,4:1 — texte secondaire (était #7a8fa6) */
-  --muted-soft:   #7a8fa6;   /*  décoration uniquement */
 
   /* ── Accent principal ── */
   --teal:         #2ec4b6;   /* aplats, bordures, fonds */
-  --teal-dark:    #1a9e92;   /* hover d'aplat uniquement */
+  --teal-dark:    #1a9e92;   /* hover d'aplat uniquement — 3,3:1, JAMAIS sur du texte */
   --teal-text:    #0f7a70;   /*  5,2:1 — TOUT usage texte de l'accent */
   --teal-soft:    #e2f7f5;
-  --teal-mid:     rgba(46, 196, 182, 0.14);
-
-  /* ── CTA (option 4 : décommenter pour le corail) ── */
-  --cta:          var(--teal);
-  --cta-hover:    var(--teal-dark);
-  /* --cta:       #ff6b4a; */
-  /* --cta-hover: #e8542f; */
 
   /* ── Accent secondaire — badges FORMATION uniquement ── */
   --amber:        #f5a623;
@@ -50,15 +41,21 @@
   --font-mono:    'IBM Plex Mono', ui-monospace, monospace;
   --font-brand:   'Hranfsey', Georgia, serif;  /* identité : monogramme, nom, titre du hero */
 
-  /* ── Échelle typographique — ratio 1,25 sur base 16px ── */
+  /* ── Échelle typographique — ratio 1,25 sur base 16px ──
+     Les crans fixes servent le corps de texte et les micro-labels.
+     À partir de 2xl (titres), les crans sont fluides : la composante en
+     `rem` du clamp est indispensable, un clamp purement en vw ignore la
+     taille de police choisie par l'utilisateur dans son navigateur. */
   --fs-xs:   0.75rem;    /* 12px */
   --fs-sm:   0.875rem;   /* 14px */
   --fs-base: 1rem;       /* 16px */
   --fs-md:   1.25rem;    /* 20px */
   --fs-lg:   1.5625rem;  /* 25px */
   --fs-xl:   1.953rem;   /* 31px */
-  --fs-2xl:  2.441rem;   /* 39px */
-  --fs-3xl:  3.052rem;   /* 49px */
+  --fs-2xl:  clamp(1.9rem, 1.2rem + 2.4vw, 2.441rem);  /* → 39px */
+  --fs-3xl:  clamp(1.8rem, 1.2rem + 2.6vw, 3.052rem);  /* → 49px */
+  --fs-4xl:  clamp(2.2rem, 1.3rem + 3.6vw, 3.815rem);  /* → 61px */
+  --fs-5xl:  clamp(2.4rem, 1.4rem + 4.0vw, 4.768rem);  /* → 76px */
 
   /* ── Échelle d'espacement 8pt ── */
   --sp-1:  0.5rem;    /*  8px */
@@ -71,10 +68,6 @@
   --sp-8:  4rem;      /* 64px */
   --sp-10: 5rem;      /* 80px */
   --sp-12: 6rem;      /* 96px */
-
-  /* ── Rythme titre ↔ texte */
-  --gap-titre-texte: var(--sp-2);
-  --gap-bloc-bloc:   var(--sp-6);
 
   /* ── Padding section ── */
   --s-pad: var(--sp-12) var(--sp-12);
@@ -97,6 +90,30 @@ button:focus-visible {
   outline: 2px solid var(--teal-text);
   outline-offset: 3px;
   border-radius: var(--r-sm);
+}
+
+/* Lien d'évitement — WCAG 2.4.1. Hors écran jusqu'à la première tabulation. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--sp-2);
+  z-index: 999;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  padding: .7rem 1.2rem;
+  border-radius: var(--r-sm);
+  transition: top .2s;
+}
+.skip-link:focus { top: var(--sp-2); }
+
+/* Les facettes du ballon sont des <a> SVG : `outline` y est mal rendu
+   selon les navigateurs. Le focus passe par l'épaisseur du trait. */
+.vp:focus-visible { outline: none; }
+.vp:focus-visible .vp-face {
+  stroke: var(--teal-text);
+  stroke-width: 4;
 }
 
 /* RESET */
@@ -122,7 +139,7 @@ ul    { list-style: none; }
  
 .section-heading {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-size: var(--fs-4xl);
   font-weight: 800;
   color: var(--navy);
   line-height: 1.05;
@@ -140,7 +157,7 @@ ul    { list-style: none; }
  
 .marker-num {
   font-family: var(--font-mono);
-  font-size: .72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   color: var(--teal);
   background: var(--teal-soft);
@@ -207,7 +224,7 @@ ul    { list-style: none; }
 .brand-last {
   font-family: var(--font-brand);
   font-weight: 400;
-  font-size: 1.35rem;
+  font-size: var(--fs-md);
   letter-spacing: .06em;
   color: var(--navy);
   line-height: 1.1;
@@ -218,7 +235,7 @@ ul    { list-style: none; }
   gap: 2rem;
 }
 .header-nav a {
-  font-size: .82rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--muted);
   letter-spacing: .04em;
@@ -336,7 +353,7 @@ ul    { list-style: none; }
 }
 .h1-line {
   font-family: var(--font-brand);
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-size: var(--fs-5xl);
   /* Hranfsey n'existe qu'en graisse 400 : tout autre poids déclenche
      un faux-gras synthétique (bug B5). Ne pas remonter cette valeur. */
   font-weight: 400;
@@ -349,7 +366,7 @@ ul    { list-style: none; }
  
 .hero-desc {
   max-width: 440px;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 300;
   color: var(--muted);
   line-height: 1.8;
@@ -365,7 +382,7 @@ ul    { list-style: none; }
 /* Ligne rythme / localisation sous la description */
 .hero-meta {
   font-family: var(--font-mono);
-  font-size: .74rem;
+  font-size: var(--fs-xs);
   letter-spacing: .06em;
   color: var(--muted);
   margin-bottom: 2.2rem;
@@ -384,27 +401,30 @@ ul    { list-style: none; }
  
 .cta-main {
   background: var(--teal);
-  color: var(--white);
-  font-weight: 600;
-  font-size: .88rem;
+  color: var(--navy);              /* 7,26:1 au repos */
+  font-family: var(--font-display);
+  font-weight: 700;                /* 600 → 700 : compense la perte de contraste perçu */
+  font-size: var(--fs-sm);
   padding: .78rem 1.8rem;
   border-radius: var(--r-sm);
   border: 2px solid var(--teal);
-  transition: all .22s;
+  transition: background .22s, color .22s, border-color .22s,
+              transform .22s, box-shadow .22s;
   letter-spacing: .02em;
 }
 .cta-main:hover {
-  background: var(--teal-dark);
-  border-color: var(--teal-dark);
+  background: var(--navy);         /* inversion : navy plein */
+  color: var(--teal);              /* 7,26:1 aussi au survol */
+  border-color: var(--navy);
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(46,196,182,.32);
+  box-shadow: 0 8px 22px rgba(15,35,64,.28);
 }
  
 .cta-ghost {
   background: transparent;
   color: var(--navy);
   font-weight: 600;
-  font-size: .88rem;
+  font-size: var(--fs-sm);
   padding: .78rem 1.8rem;
   border-radius: var(--r-sm);
   border: 2px solid var(--border-light);
@@ -412,7 +432,7 @@ ul    { list-style: none; }
 }
 .cta-ghost:hover {
   border-color: var(--teal);
-  color: var(--teal-dark);
+  color: var(--teal-text);   /* #0f7a70 → 5,2:1 */
   transform: translateY(-2px);
 }
  
@@ -469,7 +489,7 @@ ul    { list-style: none; }
 }
  
 .profil-intro p {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 300;
   color: var(--muted);
   margin-bottom: 1.1rem;
@@ -485,9 +505,9 @@ ul    { list-style: none; }
   margin-top: 1.8rem;
 }
 .profil-interests span {
-  font-size: .78rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
-  color: var(--teal-dark);
+  color: var(--teal-text);
   background: var(--white);
   border: 1.5px solid rgba(46,196,182,.25);
   padding: .28rem .9rem;
@@ -503,7 +523,7 @@ ul    { list-style: none; }
 .interest-highlight {
   background: var(--teal-soft) !important;
   border-color: var(--teal) !important;
-  color: var(--teal-dark) !important;
+  color: var(--teal-text) !important;
   font-weight: 600 !important;
 }
  
@@ -542,13 +562,13 @@ ul    { list-style: none; }
  
 .kpi-val {
   font-family: var(--font-display);
-  font-size: 2.8rem;
+  font-size: var(--fs-3xl);
   font-weight: 800;
   color: var(--teal);
   line-height: 1;
 }
 .kpi-label {
-  font-size: .78rem;
+  font-size: var(--fs-sm);
   color: var(--muted);
   line-height: 1.4;
 }
@@ -666,7 +686,7 @@ ul    { list-style: none; }
  
 /* Icône (emoji ou img) */
 .logo-icon {
-  font-size: 1.4rem;
+  font-size: var(--fs-md);
   line-height: 1;
   display: flex;
   align-items: center;
@@ -678,7 +698,7 @@ ul    { list-style: none; }
  
 /* Emoji de remplacement — légèrement plus petit pour équilibre visuel */
 .logo-emoji {
-  font-size: 1.3rem;
+  font-size: var(--fs-md);
 }
  
 /* Quand c'est une vraie image */
@@ -693,7 +713,7 @@ ul    { list-style: none; }
 /* Nom de la technologie */
 .logo-name {
   font-family: var(--font-display);
-  font-size: .9rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   color: var(--navy);
   letter-spacing: .04em;
@@ -756,9 +776,9 @@ ul    { list-style: none; }
   border-radius: 50%;
   background: var(--white);
   border: 2px solid var(--teal);
-  color: var(--teal-dark);
+  color: var(--teal-text);
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: var(--fs-base);
   font-weight: 800;
   display: flex; align-items: center; justify-content: center;
   z-index: 2;
@@ -805,7 +825,7 @@ ul    { list-style: none; }
  
 .card-title {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--navy);
   letter-spacing: .01em;
@@ -814,7 +834,7 @@ ul    { list-style: none; }
  
 .card-badge {
   font-family: var(--font-mono);
-  font-size: .65rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: .06em;
   padding: .2rem .7rem;
@@ -871,10 +891,10 @@ ul    { list-style: none; }
 }
 .card-chips span {
   font-family: var(--font-mono);
-  font-size: .65rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: .04em;
-  color: var(--teal-dark);
+  color: var(--teal-text);
   background: var(--teal-soft);
   border: 1px solid rgba(46,196,182,.25);
   padding: .15rem .6rem;
@@ -885,7 +905,7 @@ ul    { list-style: none; }
 .card-dense { min-width: 0; }
 .card-dense .card-items { gap: .08rem; }
 .card-dense .card-items li {
-  font-size: .78rem;
+  font-size: var(--fs-sm);
   line-height: 1.38;
 }
 .card-dense .card-items li::before { top: .48rem; }
@@ -1054,11 +1074,11 @@ ul    { list-style: none; }
 /* Label de catégorie */
 .featured-category {
   font-family: var(--font-mono);
-  font-size: .7rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--teal-dark);
+  color: var(--teal-text);
   display: flex;
   align-items: center;
   gap: .6rem;
@@ -1076,7 +1096,7 @@ ul    { list-style: none; }
 /* Titre */
 .featured-title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: var(--fs-3xl);
   font-weight: 800;
   color: var(--navy);
   letter-spacing: -.01em;
@@ -1085,7 +1105,7 @@ ul    { list-style: none; }
  
 /* Description */
 .featured-desc {
-  font-size: .92rem;
+  font-size: var(--fs-sm);
   font-weight: 300;
   color: var(--muted);
   line-height: 1.75;
@@ -1101,7 +1121,7 @@ ul    { list-style: none; }
  
 .featured-chips span {
   font-family: var(--font-mono);
-  font-size: .68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -1114,7 +1134,7 @@ ul    { list-style: none; }
 }
 .featured-card:hover .featured-chips span {
   border-color: rgba(46,196,182,.4);
-  color: var(--teal-dark);
+  color: var(--teal-text);
 }
  
 /* CTA bouton principal */
@@ -1125,7 +1145,7 @@ ul    { list-style: none; }
   background: var(--teal);
   color: var(--white);
   font-family: var(--font-display);
-  font-size: .88rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -1140,7 +1160,7 @@ ul    { list-style: none; }
 .featured-cta svg { transition: transform .25s; }
 .featured-cta:hover {
   background: transparent;
-  color: var(--teal-dark);
+  color: var(--teal-text);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(46,196,182,.3);
 }
@@ -1154,7 +1174,7 @@ ul    { list-style: none; }
  
 .others-label {
   font-family: var(--font-mono);
-  font-size: .68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -1183,20 +1203,27 @@ ul    { list-style: none; }
 }
  
 .other-num {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-family: var(--font-mono);   /* même famille que les .marker-num */
+  font-size: var(--fs-lg);
   font-weight: 800;
   color: transparent;
   -webkit-text-stroke: 1.5px var(--border-light);
   line-height: 1;
   flex-shrink: 0;
+  min-width: 3.4ch;                /* aligne 4.1 et 4.2 */
   transition: -webkit-text-stroke-color .2s;
+}
+
+/* -webkit-text-stroke n'est pas standard : sans lui, color: transparent
+   rendrait le numéro invisible (Firefox). */
+@supports not (-webkit-text-stroke: 1px black) {
+  .other-num { color: var(--border-light); }
 }
 .other-item:hover .other-num { -webkit-text-stroke-color: var(--teal); }
  
 .other-title {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--navy);
   letter-spacing: .01em;
@@ -1204,14 +1231,14 @@ ul    { list-style: none; }
  
 .other-meta {
   font-family: var(--font-mono);
-  font-size: .68rem;
+  font-size: var(--fs-xs);
   color: var(--muted);
   letter-spacing: .04em;
   margin-top: .1rem;
 }
  
 .other-desc {
-  font-size: .85rem;
+  font-size: var(--fs-sm);
   font-weight: 300;
   color: var(--muted);
   line-height: 1.6;
@@ -1237,7 +1264,7 @@ ul    { list-style: none; }
   box-shadow: 0 24px 60px rgba(0,0,0,.5);
   border: 1px solid rgba(46,196,182,.15);
   font-family: var(--font-mono);
-  font-size: .72rem;
+  font-size: var(--fs-xs);
   transform: rotate(1deg) translateY(-6px);
   transition: transform .3s;
 }
@@ -1263,7 +1290,7 @@ ul    { list-style: none; }
  
 .code-filename {
   margin-left: .3rem;
-  font-size: .68rem;
+  font-size: var(--fs-xs);
   color: rgba(255,255,255,.4);
   letter-spacing: .04em;
 }
@@ -1345,7 +1372,7 @@ ul    { list-style: none; }
 .accent-dot { color: var(--teal); }
  
 .contact-baseline {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 300;
   color: rgba(255,255,255,.5);
   line-height: 1.8;
@@ -1384,12 +1411,12 @@ ul    { list-style: none; }
 .contact-row:hover .contact-icon { background: var(--teal); color: var(--white); }
  
 .contact-value {
-  font-size: .9rem;
+  font-size: var(--fs-sm);
   font-weight: 400;
 }
  
 .contact-arrow {
-  font-size: 1.1rem;
+  font-size: var(--fs-base);
   color: rgba(255,255,255,.2);
   transition: color .22s, transform .22s;
 }
@@ -1408,7 +1435,7 @@ ul    { list-style: none; }
 }
 .footer-name {
   font-family: var(--font-body);
-  font-size: .78rem;
+  font-size: var(--fs-sm);
   color: rgba(255,255,255,.3);
 }
 
@@ -1444,7 +1471,7 @@ ul    { list-style: none; }
   overflow: hidden;
   box-shadow: 0 24px 64px rgba(0,0,0,.5);
   font-family: var(--font-mono);
-  font-size: .7rem;
+  font-size: var(--fs-xs);
   transform: rotate(-1deg);
   transition: transform .4s ease;
 }
@@ -1462,14 +1489,14 @@ ul    { list-style: none; }
  
 .py-filename {
   margin-left: .3rem;
-  font-size: .62rem;
+  font-size: var(--fs-xs);
   color: rgba(255,255,255,.5);
   letter-spacing: .03em;
 }
  
 .py-lang {
   margin-left: auto;
-  font-size: .58rem;
+  font-size: var(--fs-xs);
   color: rgba(46,196,182,.5);
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1502,7 +1529,7 @@ ul    { list-style: none; }
   width: 1.8rem;
   text-align: right;
   color: rgba(255,255,255,.18);
-  font-size: .6rem;
+  font-size: var(--fs-xs);
   user-select: none;
   padding-right: .4rem;
 }
@@ -1563,17 +1590,17 @@ ul    { list-style: none; }
  
 .cv-eyebrow {
   font-family: var(--font-mono);
-  font-size: .65rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--teal-dark);
+  color: var(--teal-text);
   margin-bottom: .3rem;
 }
  
 .cv-title {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: var(--fs-md);
   font-weight: 800;
   color: var(--navy);
   letter-spacing: -.01em;
@@ -1581,7 +1608,7 @@ ul    { list-style: none; }
 }
  
 .cv-desc {
-  font-size: .88rem;
+  font-size: var(--fs-sm);
   font-weight: 300;
   color: var(--muted);
   line-height: 1.6;
@@ -1595,7 +1622,7 @@ ul    { list-style: none; }
   background: var(--teal);
   color: var(--white);
   font-family: var(--font-display);
-  font-size: .88rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: .06em;
   padding: .85rem 1.8rem;
